@@ -8,7 +8,7 @@ redis.set "stupidkey", "value"
 
 someFunctionWithRedis = (key, callback) -> 
     redisKey = await exists key
-    unless redisKey is 1
+    unless redisKey is false
         if not callback
             throw Error "Callback required."
         else
